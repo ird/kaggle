@@ -13,9 +13,10 @@ train['Fare'] = train['Fare'].fillna(train.Fare.median())
 target = train['Survived'].values
 features = train[['Pclass', 'Sex', 'Age', 'Fare']].values
 
-tr = tree.DecisionTreeClassifier()
+tr = tree.DecisionTreeClassifier(max_depth=4)
 tr = tr.fit(features, target)
 print(tr.feature_importances_)
+print(tree.export_graphviz(tr, out_file="tree.dot", feature_names=['Pclass', 'Sex', 'Age', 'Fare']))
 
 test = pd.read_csv('test.csv')
 test['Sex'][test['Sex'] == 'male'] = 0
