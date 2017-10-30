@@ -1,2 +1,4 @@
 *.csv
+*.dot
+*.ps
 .ipynb_checkpoints/*
