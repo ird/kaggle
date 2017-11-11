@@ -12,6 +12,21 @@ def main():
     D = np.array((1.5, 3, 3, 6))
     print(inspect(C))
     print(inspect(D))
+    # reshape does what it sounds like:
+    E = np.empty(16).reshape(4, 4)
+    print(E)
+    print(E.itemsize)
+    print(E != 0)
+    # dot product defn
+    F = np.array([1, 2, 3])
+    G = np.array([[1], [2], [3]])
+    print(F.dot(G))
+    print(my_dot(F, G))
+
+
+def my_dot(a, b):
+    # TODO
+    pass
 
 
 def inspect(n):
@@ -19,7 +34,7 @@ def inspect(n):
     # r += "Type of <" + hex(id(n)) + "> " + str(type(n)) + "\n"
     # r += "Data type of <" + hex(id(n)) + "> " + str(n.dtype) + "\n"
     r = ""
-    characteristics = {'Contents of': str(n),
+    characteristics = {'\nContents of': str(n),
                        'Type of': str(type(n)),
                        'Data type of': str(n.dtype)}
     for item in characteristics:
