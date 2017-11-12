@@ -18,15 +18,19 @@ def main():
     print(E.itemsize)
     print(E != 0)
     # dot product defn
-    F = np.array([1, 2, 3])
-    G = np.array([[1], [2], [3]])
+    F = np.array([[0, 4, -2], [-4, -3, 0]])
+    G = np.array([[0, 1, 5, 6], [1, -2, 5, 6], [2, 3, 5, 6]])
     print(F.dot(G))
     print(my_dot(F, G))
 
 
 def my_dot(a, b):
-    # TODO
-    pass
+    # TODO - try/catch for scalar arrays
+    (a_y, a_x) = a.shape
+    (b_y, b_x) = b.shape
+    assert(b_y == a_x)
+    result = np.zeros((a_y, b_x))
+    # finish
 
 
 def inspect(n):
